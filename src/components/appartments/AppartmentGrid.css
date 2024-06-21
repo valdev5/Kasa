@@ -1,0 +1,17 @@
+.grid{
+    background-color: gainsboro;
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: wrap ;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+@media screen and (width <= 768px) {
+.grid{
+    justify-content: center;
+    background-color: white;
+    padding: 0;
+}
+}
