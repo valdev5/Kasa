@@ -1,5 +1,5 @@
 import React from 'react';
-import "./main.css"
+import "./main.scss"
 
 function Main(props) {
   const { children } = props;
@@ -9,3 +9,4 @@ function Main(props) {
 }
 
 export default Main;
+
