@@ -1,24 +1,36 @@
 
 
 
-import React from 'react'
-import "./AppartmentGrid.scss"
+import React, { useEffect, useState } from 'react'
+import "../appartments/Appartment.jsx"
 import Appartment from "./Appartment.jsx"
 import "./Appartment.scss"
-import  {logements}  from "../../logements.js"
 
-logements.forEach(Appartment => {
-  console.log(Appartment)
-})
+
+
 
 function AppartmentGrid() {
+  const [appartments,setAppartments] =useState([]);
+
+  useEffect(fetchAppartments,[])
+
+ function fetchAppartments(){
+   fetch("db.json")
+  .then((res) => res.json())
+   .then((res) => setAppartments (res))
+   .catch(console.error);
+
+ } 
+
+
+  
   return (
     <div className="grid">
-        <Appartment />
-        <Appartment />
-        <Appartment />
-        <Appartment />
-         </div>
+      {appartments.map((appartments) => (
+      <Appartment title={appartments.title} imageUrl = {appartments.cover} id={appartments.id} />
+        ))}
+ 
+      </div>
   )
 }
 

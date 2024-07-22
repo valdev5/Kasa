@@ -3,13 +3,18 @@
 
 .grid{
     background-color: $grid-background;
+    min-height: 50vh;
     border-radius: 1rem;
     display: flex;
     flex-wrap: wrap ;
     gap: 1rem;
     padding: 1rem;
     justify-content: space-between;
-    margin: 2rem;
+    margin: 4rem;
+    & > * {
+        width: 100%;
+        max-width: 23rem;
+    }
 }
 
 @media screen and (width <= 768px) {

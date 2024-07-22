@@ -1,20 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
   RouterProvider,
   Outlet,
-} from "react-router-dom";
-import Navbar from './components/navbar/Navbar';
-import Footer from "./components/footer/footer"; // Assurez-vous du bon chemin et de la casse
+} from 'react-router-dom';
+import HomePage from './Pages/HomePage'; 
+import AppartmentPage from './Pages/AppartmentPage'; 
+import Navbar from './components/navbar/Navbar.jsx';
+import Footer from "./layout/footer/footer.jsx"; 
+import About from "./Pages/Pages/apropos.jsx"
+import { ErrorPageNotFound } from './Pages/Pages/ErrorPageNotFound.jsx';
 
 const HeaderFooterLayout = () => {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </>
   );
@@ -23,22 +28,22 @@ const HeaderFooterLayout = () => {
 export const router = createBrowserRouter([
   {
     element: <HeaderFooterLayout />,
-    errorElement: <h1>404 Erreur</h1>,
+    errorElement: <ErrorPageNotFound />,
     children: [
       {
-        path: "/",
-        element: <App />
+        path: '/',
+        element: <HomePage /> 
       },
       {
-        path: "/flat",
-        element: <h1>Nos appartements</h1>
+        path: '/flat',
+        element: <AppartmentPage />
       },
       {
-        path: "/about",
-        element: <h1>A propos</h1>
+        path: '/about',
+        element: <About />
       },
       {
-        path:"/contact",
+        path: '/contact',
         element: <h1>Contact</h1>
       }
     ]
@@ -52,7 +57,4 @@ root.render(
   </React.StrictMode>
 );
 
-// Si vous souhaitez mesurer les performances de votre application, passez une fonction
-// pour enregistrer les résultats (par exemple : reportWebVitals(console.log))
-// ou envoyez-les à une destination d'analyse. En savoir plus : https://bit.ly/CRA-vitals
 reportWebVitals();

@@ -1,0 +1,21 @@
+@use "../../scss/variables.scss" as* ;
+
+.appartment-page{
+    color: $color-primary;
+    margin: 4rem;
+    div:first-child {
+        margin-bottom: 1rem;
+        flex-grow: 1;
+        @media screen and (width <= 768px) {
+            flex-grow: 0;
+          }
+    }
+    .appartment__description__container{
+        display: flex;
+        gap: 1rem;
+        @media screen and (width <= 768px){
+            flex-direction: column;
+        }
+    }
+ 
+}

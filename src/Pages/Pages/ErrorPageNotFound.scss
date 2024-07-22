@@ -1,0 +1,24 @@
+@use "../../scss/variables.scss" as *;
+
+.page__error{
+    color: $color-primary;
+    text-align: center;
+    main{
+        padding: 1 2rem;
+    }
+    h1 {
+        font-size: 10rem;
+        margin-bottom: 0.5em;
+    
+    }
+    h2 {
+        font-size: 28px;
+        font-weight: 300;
+    }
+    a{
+        color: $text-color;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
