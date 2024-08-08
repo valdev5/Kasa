@@ -6,12 +6,12 @@ import {
   RouterProvider,
   Outlet,
 } from 'react-router-dom';
-import HomePage from './Pages/HomePage'; 
-import AppartmentPage from './Pages/AppartmentPage'; 
+import HomePage from './Pages/home/HomePage'; 
+import AppartmentPage from './Pages/appartment/Appartment.jsx'; 
 import Navbar from './components/navbar/Navbar.jsx';
 import Footer from "./layout/footer/footer.jsx"; 
-import About from "./Pages/Pages/apropos.jsx"
-import { ErrorPageNotFound } from './Pages/Pages/ErrorPageNotFound.jsx';
+import About from "./Pages/about/about.jsx"
+import { ErrorPageNotFound } from './Pages/404/ErrorPageNotFound.jsx';
 
 const HeaderFooterLayout = () => {
   return (

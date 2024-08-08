@@ -5,7 +5,7 @@ import "./appartmentHeader.scss";
 export function AppartmentHeader({flat}) {
   
 const {name} = flat.host
-const [firstName, lastName] = name.split("");
+const [firstName, lastName] = name.split(" ");
 
   return (
     <div className='appartment__header'>

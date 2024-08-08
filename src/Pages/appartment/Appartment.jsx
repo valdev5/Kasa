@@ -1,30 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import "./Pages/Appartment.scss";
-import "../components/appartments/appartmentdescription.scss";
-import AppartmentBanner from "../components/appartments/appartmentBanner";
-import AppartmentHeader from "../components/appartments/appartmentHeader";
+import "./Appartment.scss";
+import "../../components/dropdownMenu/dropdownMenu.scss";
+import DropdownMenu from "../../components/dropdownMenu/dropdownMenu";
+import AppartmentBanner from "../../components/appartmentBanner/appartmentBanner";
+import AppartmentHeader from "../../components/appartmentHeader/appartmentHeader";
 import { useLocation } from 'react-router-dom';
-
-function AppartmentDescription(props) {
-  const [isContentVisible, setIsContentVisible] = useState(false);
-  
-  const showContent = () => {
-    setIsContentVisible(!isContentVisible);
-  };
-
-  return (
-    <div className='appartment__description'>
-      <p className='description__header'>
-        <span>{props.title}</span>
-        <i 
-          className={`fa-solid ${isContentVisible ? 'fa-chevron-down' : 'fa-chevron-up'}`} 
-          onClick={showContent}
-        ></i>
-      </p>
-      {isContentVisible && <p className='description__content'>{props.content}</p>}
-    </div>
-  );
-}
 
 function AppartmentPage() {
   const location = useLocation();
@@ -32,7 +12,7 @@ function AppartmentPage() {
 
   useEffect(() => {
     fetchAppartmentsData();
-  }, []);
+  } );
 
   function fetchAppartmentsData() {
     fetch("db.json")
@@ -51,8 +31,8 @@ function AppartmentPage() {
       <AppartmentBanner imageUrl={selectedFlat.cover} />
       <AppartmentHeader flat={selectedFlat} />
       <div className='appartment__description__container'>
-        <AppartmentDescription title="Description" content={selectedFlat.description} />
-        <AppartmentDescription 
+        <DropdownMenu title="Description" content={selectedFlat.description} />
+        <DropdownMenu 
           title="Équipements" 
           content={<ul>{selectedFlat.equipments.map((equipment, index) => <li key={index}>{equipment}</li>)}</ul>} 
         />

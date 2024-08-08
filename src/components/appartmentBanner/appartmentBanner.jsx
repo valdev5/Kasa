@@ -1,5 +1,5 @@
 import React from 'react'
-import "../appartments/appartmentBanner.scss"
+import "./appartmentBanner.scss"
 
 function AppartmentBanner(props) {
   return (

@@ -1,11 +1,12 @@
 import React from 'react'
-import bannerimage from "../../assets/imagebanner.jpg"
 import "./banner.scss"
+import bannerimage from "../../assets/imagebanner.jpg"
 
-function Banner() {
+function Banner(props) {
+  const image = props.bannerimage ? props.bannerimage : bannerimage
   return (
     <div className ="banner">  
-    <img src={bannerimage} alt="banner" />
+    <img src={image} alt="banner" />
     <h1>Chez vous, partout et ailleurs</h1>
     </div>
   )

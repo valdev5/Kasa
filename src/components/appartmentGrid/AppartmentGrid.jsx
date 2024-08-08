@@ -2,9 +2,9 @@
 
 
 import React, { useEffect, useState } from 'react'
-import "../appartments/Appartment.jsx"
-import Appartment from "./Appartment.jsx"
-import "./Appartment.scss"
+import "../appartment/Appartment.jsx"
+import Appartment from "../appartment/Appartment.jsx"
+import "./AppartmentGrid.scss"
 
 
 

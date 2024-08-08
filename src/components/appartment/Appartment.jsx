@@ -1,5 +1,5 @@
 import React from 'react';
-import "../appartments/AppartmentGrid.scss";
+import "../appartmentGrid/AppartmentGrid.scss";
 import "./Appartment.scss";
 import { Link } from "react-router-dom";
 
