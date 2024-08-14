@@ -4,10 +4,11 @@ import bannerimage from "../../assets/imagebanner.jpg"
 
 function Banner(props) {
   const image = props.bannerimage ? props.bannerimage : bannerimage
+  const text = props.text ? props.text : ""
   return (
     <div className ="banner">  
     <img src={image} alt="banner" />
-    <h1>Chez vous, partout et ailleurs</h1>
+    <h1>{text}</h1>
     </div>
   )
 }

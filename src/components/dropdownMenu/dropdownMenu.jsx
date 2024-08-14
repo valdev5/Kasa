@@ -11,8 +11,9 @@ import "./dropdownMenu.scss"
         <div className='appartment__description'>
                         <p className='description__header'>
                             <span>{title}</span>
-                            <i className="fa-solid fa-chevron-up" onClick={showContent}></i></p>
-                        {isContentVisible &&<p className='description__content'>{content}</p>}
+                            <i className={`fa-solid  ${isContentVisible ? "fa-chevron-down" : "fa-chevron-up"}`} onClick={showContent}></i>
+                        </p>
+                        {isContentVisible &&<div className='description__content'>{content}</div>}
                     </div>
     );
 }
