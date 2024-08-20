@@ -17,6 +17,9 @@
       margin-bottom: 0;
       margin-top: 0rem;
       font-size: 40px;
+      @media screen and (width <= 768px) {
+        font-size: 27px;
+      }
     }
 
     h2 {
@@ -31,6 +34,11 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(100px, 140px));
       gap: 1rem;
+      @media screen and (width <= 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 82px));
+        font-size: 15px;
+        text-align: center;
+      }
 
       span {
         background-color: $color-primary;

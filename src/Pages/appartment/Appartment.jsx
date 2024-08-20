@@ -4,6 +4,7 @@ import "../../components/dropdownMenu/dropdownMenu.scss";
 import DropdownMenu from "../../components/dropdownMenu/dropdownMenu";
 import AppartmentBanner from "../../components/appartmentBanner/appartmentBanner";
 import AppartmentHeader from "../../components/appartmentHeader/appartmentHeader";
+import Slideshow from "../../components/slideshow/slideshow"; 
 import { useLocation } from 'react-router-dom';
 
 function AppartmentPage() {
@@ -12,7 +13,7 @@ function AppartmentPage() {
 
   useEffect(() => {
     fetchAppartmentsData();
-  } );
+  }, []);
 
   function fetchAppartmentsData() {
     fetch("db.json")
@@ -26,9 +27,13 @@ function AppartmentPage() {
 
   if (selectedFlat == null) return <div>...Loading</div>;
 
+  const images = selectedFlat.pictures;
+  const isCoverInSlideshow = images.includes(selectedFlat.cover);
+
   return (
     <div className="appartment-page">
-      <AppartmentBanner imageUrl={selectedFlat.cover} />
+      {!isCoverInSlideshow && <AppartmentBanner imageUrl={selectedFlat.cover} />}
+      <Slideshow images={images} />
       <AppartmentHeader flat={selectedFlat} />
       <div className='appartment__description__container'>
         <DropdownMenu title="Description" content={selectedFlat.description} />
@@ -40,5 +45,6 @@ function AppartmentPage() {
     </div>
   );
 }
+
 
 export default AppartmentPage;

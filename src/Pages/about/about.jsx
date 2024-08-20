@@ -35,7 +35,7 @@ const aboutList = [
 function About() {
   return (
     <>
-      <Banner bannerimage={imageApropos} />
+      <Banner text=" " bannerimage={imageApropos} />
       <div className='container_about'>
       {aboutList.map((about, index) => (
             <DropdownMenu key={about.name} title={about.name} content={about.content} />
