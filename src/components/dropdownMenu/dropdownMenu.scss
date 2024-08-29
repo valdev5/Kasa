@@ -21,13 +21,16 @@
     }
     .description__content{
         background-color: $backgroud-light;
-        color: $color-primary;
+        color: $text-color;
         padding: 1rem;
         border-radius: 0.7rem;
         position: relative;
         top: -0.3rem;
         z-index: -1;
         
+    }
+    ul {
+        list-style: none;
     }
     .fa-chevron-up {
         transition: transform 0.3s;

@@ -10,12 +10,14 @@ function Navbar() {
     <img src="LOGO.svg" alt="logo" />
     </div>
     </NavLink>
+    <div className='lienStyle'>
     <NavLink to ="/">
       <div>Accueil</div>
 </NavLink>
     <NavLink to ="/about">
       <div>A propos </div>
 </NavLink>
+</div>
   </nav>
   )
 }
