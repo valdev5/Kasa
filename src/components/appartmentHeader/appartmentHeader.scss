@@ -9,8 +9,6 @@
 
   .appartment-page__title {
     flex-grow: 1;
-    
-      
 
     h1 {
       font-weight: 500;
@@ -55,9 +53,9 @@
     display: flex;
     flex-direction: column;
     @media screen and (width <= 768px) {
-        flex-direction: row;
-        display: flex;
-        justify-content: space-between;
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
     }
 
     &__detail {
@@ -102,7 +100,6 @@
       .on {
         color: $color-primary;
       }
-
     }
   }
 }

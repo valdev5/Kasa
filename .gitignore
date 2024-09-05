@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Ouvrez ou créez un fichier .gitignore à la racine de votre projet
+echo 'AppData/' >> .gitignore
+

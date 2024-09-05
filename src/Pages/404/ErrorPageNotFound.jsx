@@ -1,24 +1,20 @@
-import React from 'react'
-import "./ErrorPageNotFound.scss"
-import Navbar from '../../components/navbar/Navbar'
-import Main from "../../layout/main/main"
+import React from "react";
+import "./ErrorPageNotFound.scss";
+import Navbar from "../../components/navbar/Navbar";
+import Main from "../../layout/main/main";
 import { Link } from "react-router-dom";
-import Footer from '../../layout/footer/footer';
+import Footer from "../../layout/footer/footer";
 
 export function ErrorPageNotFound() {
   return (
-     <>
-    <Navbar />
-    <Main>
+    <>
+      <Main>
         <div className="page__error">
-    <h1>404</h1>
-    <h2>Oups! La page que vous demandez n'existe pas.</h2>
-    <Link to="/">Retourner sur la page d'accueil</Link>
-    </div>
-    </Main>
-    <Footer />
+          <h1>404</h1>
+          <h2>Oups! La page que vous demandez n'existe pas.</h2>
+          <Link to="/">Retourner sur la page d'accueil</Link>
+        </div>
+      </Main>
     </>
-  )
+  );
 }
-
-

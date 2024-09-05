@@ -1,27 +1,26 @@
 @use "../../scss/variables.scss" as *;
 
-
-.grid{
-    background-color: $grid-background;
-    min-height: 50vh;
-    border-radius: 1rem;
-    display: flex;
-    flex-wrap: wrap ;
-    gap: 1rem;
-    padding: 1rem;
-    justify-content: space-between;
-    margin: 4rem;
-    & > * {
-        width: 100%;
-        max-width: 23rem;
-    }
+.grid {
+  background-color: $grid-background;
+  min-height: 50vh;
+  border-radius: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: space-between;
+  margin: 4rem;
+  & > * {
+    width: 100%;
+    max-width: 23rem;
+  }
 }
 
 @media screen and (width <= 768px) {
-    .grid{
-        justify-content: center;
-        background-color: $grid-backgroud-secondary;
-        padding: 0;
-        margin: 1rem;
-    }
+  .grid {
+    justify-content: center;
+    background-color: $grid-backgroud-secondary;
+    padding: 0;
+    margin: 1rem;
+  }
 }
