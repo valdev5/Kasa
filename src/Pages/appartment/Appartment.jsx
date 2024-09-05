@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from "react";
 import "./Appartment.scss";
 import "../../components/dropdownMenu/dropdownMenu.scss";
 import DropdownMenu from "../../components/dropdownMenu/dropdownMenu";
@@ -12,11 +12,7 @@ function AppartmentPage() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    fetchAppartmentsData();
-  }, [id]);
-
-  function fetchAppartmentsData() {
+  const fetchAppartmentsData = useCallback(() => {
     fetch("/db.json")
       .then((res) => res.json())
       .then((flats) => {
@@ -27,7 +23,11 @@ function AppartmentPage() {
           navigate("/404"); // Redirige vers la page 404 si l'ID n'est pas valide
         }
       });
-  }
+  }, [id, navigate]);
+
+  useEffect(() => {
+    fetchAppartmentsData();
+  }, [fetchAppartmentsData]);
 
   if (selectedFlat == null) return <div>...Loading</div>;
 
@@ -36,14 +36,22 @@ function AppartmentPage() {
 
   return (
     <div className="appartment-page">
-      {!isCoverInSlideshow && <AppartmentBanner imageUrl={selectedFlat.cover} />}
+      {!isCoverInSlideshow && (
+        <AppartmentBanner imageUrl={selectedFlat.cover} />
+      )}
       <Slideshow images={images} />
       <AppartmentHeader flat={selectedFlat} />
-      <div className='appartment__description__container'>
+      <div className="appartment__description__container">
         <DropdownMenu title="Description" content={selectedFlat.description} />
-        <DropdownMenu 
-          title="Équipements" 
-          content={<ul>{selectedFlat.equipments.map((equipment, index) => <li key={index}>{equipment}</li>)}</ul>} 
+        <DropdownMenu
+          title="Équipements"
+          content={
+            <ul>
+              {selectedFlat.equipments.map((equipment, index) => (
+                <li key={index}>{equipment}</li>
+              ))}
+            </ul>
+          }
         />
       </div>
     </div>
